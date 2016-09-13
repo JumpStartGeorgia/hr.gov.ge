@@ -119,7 +119,7 @@ def pull_out_ids(links)
   links.each do |link|
     # puts "- link = #{link}; href = #{link['href']}"
     post_id = get_url_id(link['href'])
-    puts "- post_id = #{post_id}"
+    # puts "- post_id = #{post_id}"
     next if post_id.nil?
 
     if reached_max_num_ids_to_scrape
