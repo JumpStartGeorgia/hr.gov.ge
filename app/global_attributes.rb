@@ -1,5 +1,3 @@
-require_relative 'locales'
-
 @statistics_sheet = StatisticsSheet.new
 
 @data_files_log = CustomLogger.new('Data Files Log', 'data_files.log')

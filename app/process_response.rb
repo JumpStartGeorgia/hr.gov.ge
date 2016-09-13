@@ -121,35 +121,6 @@ def process_response(response)
 
   end
 
-  # # additional info
-  # tables = nil
-  # if locale_key == :en
-  #   tables = doc.css('table.fen')
-  # else
-  #   tables = doc.css('table.fge')
-  # end
-  # if tables.length > 6
-  #   tds = tables[5].css('td')
-  #   if tds.length > 2
-  #     # there may be many rows so grab them all
-  #     # ignore first row for it is header
-  #     tds.each_with_index do |td, index|
-  #       # if this is not the additional info section, stop
-  #       break if index == 0 && td.text.strip.downcase != @locales[locale_key][:keys][:additional_info]
-  #       if index > 0
-  #         text = td.text.strip
-  #         if text != @nbsp
-  #           if json[:additional_info].nil?
-  #             json[:additional_info] = text
-  #           else
-  #             json[:additional_info] += " \n #{text}"
-  #           end
-  #         end
-  #       end
-  #     end
-  #   end
-  # end
-
   if !json[:posting_id].nil?
     # save the json
     file_path = folder_path + @json_file

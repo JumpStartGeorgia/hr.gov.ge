@@ -77,35 +77,6 @@ def get_parent_id_folder(id)
   end
 end
 
-def get_locale_key(locale_id)
-  match = @locales.keys.select{|x| @locales[x][:id] == locale_id}.first
-  if !match.nil?
-    return match
-  end
-end
-
-# determine the type of page being viewed
-def get_page_type(text, locale_id)
-  key = get_locale_key(locale_id)
-  if !key.nil?
-    type = @locales[key][:types].values.select{|x| text.downcase.index(x) == 0}
-    if !type.nil?
-      return type.first
-    end
-  end
-end
-
-# determine the property type of page being viewed
-def get_property_type(text, locale_id)
-  key = get_locale_key(locale_id)
-  if !key.nil?
-    type = @locales[key][:property_types].values.select{|x| !text.downcase.index(x).nil?}
-    if !type.nil?
-      return type.first
-    end
-  end
-end
-
 # pull out a query parameter value for a particular key
 def get_param_value(url, key)
   value = nil
