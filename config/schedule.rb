@@ -22,6 +22,6 @@
 job_type :rake, 'source ~/.keychain/alpha-sh; cd :path && bundle exec rake :task --quiet'
 set :output, '/log/daily_cron_job.log'
 
-every 1.day, at: '4:00 am' do
+every 1.day, at: '2:00 am' do
   rake 'scraper:run'
 end
