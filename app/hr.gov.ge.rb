@@ -17,7 +17,7 @@ def make_requests
   if pagination_links.length > 0
     # if there is no next page, then set last_page = 1 (done above)
     # else, the last page is in the 2nd to last link (the last link is the next page link)
-    if !doc.css('.paging .pagination-container .pagination li a.PagedList-skipToNext').nil?
+    if !doc.css('.paging .pagination-container .pagination li a.PagedList-skipToNext').empty?
       last_page = get_param_value(pagination_links[pagination_links.length-2]['href'], 'pageNo')
     end
   end
